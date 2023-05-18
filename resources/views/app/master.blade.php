@@ -188,7 +188,7 @@
 
     <div class="footer">
         <div class="copyright">
-            <p>Copyright &copy; Aplikasi Keuangan Menggunakan Laravel. by <a href="https://www.malasngoding.com" target="_blank">malasngoding.com</a> {{ date('Y') }}</p>
+            <p>Redesma Technologies 2023</p>
         </div>
     </div>
 </div>
