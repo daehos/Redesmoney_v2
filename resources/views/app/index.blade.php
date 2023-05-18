@@ -6,9 +6,9 @@
 
   <div class="container-fluid mt-3">
 
-    <div class="row">
-      <div class="col-lg-4 col-sm-12">
-        <div class="card gradient-7">
+  <div class="row">
+      <div class="col-lg-12 col-sm-12">
+      <div class="card" style="background-color: #118ab2">
           <div class="card-body">
             <h3 class="card-title text-white">Pilih Session</h3>
             <form method="get" action="">
@@ -22,14 +22,19 @@
           </div>
         </div>
       </div>
-      
+    </div>
 
+    
+    
+    
+    <div class="row">
       <?php 
       if(isset($_GET['session'])){
         if($_GET['session'] == "hari"){
           ?>
+
           <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-7">
+            <div class="card" style="background-color: #5f7847">
               <div class="card-body">
                 <h3 class="card-title text-white">Pemasukan Hari Ini</h3>
                 <div class="d-inline-block">
@@ -39,8 +44,21 @@
               </div>
             </div>
           </div>
+
           <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-8">
+          <div class="card" style="background-color: #b34127">
+              <div class="card-body">
+                <h3 class="card-title text-white">Pengeluaran Hari Ini</h3>
+                <div class="d-inline-block">
+                  <h3 class="text-white">{{ "Rp. ".number_format($pengeluaran_hari_ini->total)." ,-" }}</h3>
+                  <p class="text-white mb-0">{{ date('d-m-Y') }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-12">
+          <div class="card" style="background-color: #3c979a">
               <div class="card-body">
                 <h3 class="card-title text-white">Saldo Hari Ini</h3>
                 <div class="d-inline-block">
@@ -50,11 +68,13 @@
               </div>
             </div>
           </div>
+          
+         
           <?php
         }else if($_GET['session'] == "bulan"){
           ?>
           <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-2">
+          <div class="card" style="background-color: #003049">
               <div class="card-body">
                 <h3 class="card-title text-white">Pemasukan Bulan Ini</h3>
                 <div class="d-inline-block">
@@ -64,8 +84,22 @@
               </div>
             </div>
           </div>
+
+          
           <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-8">
+          <div class="card" style="background-color: #d62828">
+              <div class="card-body">
+                <h3 class="card-title text-white">Pengeluaran Bulan Ini</h3>
+                <div class="d-inline-block">
+                  <h3 class="text-white">{{ "Rp. ".number_format($pengeluaran_bulan_ini->total)." ,-" }}</h3>
+                  <p class="text-white mb-0">{{ date('M') }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-12">
+          <div class="card" style="background-color: #f77f00">
               <div class="card-body">
                 <h3 class="card-title text-white">Saldo Bulan</h3>
                 <div class="d-inline-block">
@@ -75,11 +109,13 @@
               </div>
             </div>
           </div>
+
+          
           <?php
         }else if($_GET['session'] == "tahun"){
           ?>
           <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-3">
+          <div class="card" style="background-color: #06d6a0">
               <div class="card-body">
                 <h3 class="card-title text-white">Pemasukan Tahun Ini</h3>
                 <div class="d-inline-block">
@@ -89,22 +125,37 @@
               </div>
             </div>
           </div>
+
           <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-8">
+          <div class="card" style="background-color: #ef476f">
               <div class="card-body">
-                <h3 class="card-title text-white">Saldo Tahun Ini</h3>
+                <h3 class="card-title text-white">Pengeluaran Tahun Ini</h3>
                 <div class="d-inline-block">
-                  <h3 class="text-white">{{ "Rp. ".number_format($pemasukan_tahun_ini->total - $pengeluaran_tahun_ini->total)." ,-" }}</h3>
+                  <h3 class="text-white">{{ "Rp. ".number_format($pengeluaran_tahun_ini->total)." ,-" }}</h3>
+                  <p class="text-white mb-0">{{ date('Y') }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-12">
+          <div class="card" style="background-color: #ffd166">
+              <div class="card-body">
+                <h3 class="card-title text-black">Saldo Tahun Ini</h3>
+                <div class="d-inline-block">
+                  <h3 class="text-black">{{ "Rp. ".number_format($pemasukan_tahun_ini->total - $pengeluaran_tahun_ini->total)." ,-" }}</h3>
                   <p class="text-white mb-0">Saldo</p>
                 </div>
               </div>
             </div>
           </div>
+
+
           <?php
         }else if($_GET['session'] == "semua"){
           ?>
           <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-4">
+          <div class="card" style="background-color: #43aa8b">
               <div class="card-body">
                 <h3 class="card-title text-white">Seluruh Pemasukan</h3>
                 <div class="d-inline-block">
@@ -116,7 +167,19 @@
           </div>
 
           <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-8">
+          <div class="card" style="background-color: #f94144">
+              <div class="card-body">
+                <h3 class="card-title text-white">Seluruh Pengeluaran</h3>
+                <div class="d-inline-block">
+                  <h3 class="text-white">{{ "Rp. ".number_format($seluruh_pengeluaran->total)." ,-" }}</h3>
+                  <p class="text-white mb-0">Semua</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-sm-12">
+          <div class="card" style="background-color: #577590">
               <div class="card-body">
                 <h3 class="card-title text-white">Saldo Keseluruhan</h3>
                 <div class="d-inline-block">
@@ -126,6 +189,7 @@
               </div>
             </div>
           </div>
+
 
           <?php
         }
@@ -153,82 +217,7 @@
             </div>
           </div>
         </div>
-        <?php 
-      }
-      ?>
 
-
-
-      
-
-
-    </div>
-
-    <div class="row">
-      <div class="col-lg-4 col-sm-12">
-
-      </div>
-      <?php 
-      if(isset($_GET['session'])){
-        if($_GET['session'] == "hari"){
-          ?>
-          <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-1">
-              <div class="card-body">
-                <h3 class="card-title text-white">Pengeluaran Hari Ini</h3>
-                <div class="d-inline-block">
-                  <h3 class="text-white">{{ "Rp. ".number_format($pengeluaran_hari_ini->total)." ,-" }}</h3>
-                  <p class="text-white mb-0">{{ date('d-m-Y') }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <?php
-        }else if($_GET['session'] == "bulan"){
-          ?>
-          <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-9">
-              <div class="card-body">
-                <h3 class="card-title text-white">Pengeluaran Bulan Ini</h3>
-                <div class="d-inline-block">
-                  <h3 class="text-white">{{ "Rp. ".number_format($pengeluaran_bulan_ini->total)." ,-" }}</h3>
-                  <p class="text-white mb-0">{{ date('M') }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <?php
-        }else if($_GET['session'] == "tahun"){
-          ?>
-          <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-6">
-              <div class="card-body">
-                <h3 class="card-title text-white">Pengeluaran Tahun Ini</h3>
-                <div class="d-inline-block">
-                  <h3 class="text-white">{{ "Rp. ".number_format($pengeluaran_tahun_ini->total)." ,-" }}</h3>
-                  <p class="text-white mb-0">{{ date('Y') }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <?php
-        }else if($_GET['session'] == "semua"){
-          ?>
-          <div class="col-lg-4 col-sm-12">
-            <div class="card gradient-8">
-              <div class="card-body">
-                <h3 class="card-title text-white">Seluruh Pengeluaran</h3>
-                <div class="d-inline-block">
-                  <h3 class="text-white">{{ "Rp. ".number_format($seluruh_pengeluaran->total)." ,-" }}</h3>
-                  <p class="text-white mb-0">Semua</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <?php
-        }
-      }else{
-        ?>
         <div class="col-lg-4 col-sm-12">
           <div class="card gradient-1">
             <div class="card-body">
@@ -243,6 +232,11 @@
         <?php 
       }
       ?>
+
+
+
+      
+
 
     </div>
 

@@ -164,13 +164,8 @@
                 </li>
                 @endif
 
-                <li>
-                    <a href="{{ route('password') }}" aria-expanded="false">
-                        <i class="icon-lock menu-icon mr-3"></i><span class="nav-text">Ganti Password</span>
-                    </a>
-                </li>
-
-                <li>
+                <!-- //opsi logout -->
+                <!-- <li>
                     <a href="{{ route('logout') }}" aria-expanded="false" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         <i class="icon-logout menu-icon mr-3"></i><span class="nav-text">Log Out</span>
                     </a>
@@ -178,7 +173,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                </li>
+                </li> -->
 
             </ul>
         </div>
