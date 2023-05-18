@@ -284,38 +284,56 @@
      </section>
 
 
-     <section class="col-lg-12">
+     
+     <section class="col-lg-6">
 
-      <div class="card card-grafik">
-        <div class="card-header pt-4">
-          <h5 class="card-title">Grafik Keuangan <b>Per Hari</b> Di Bulan Ini</h5>
-        </div>
-        <div class="card-body">
-
-          <div style="overflow-x: scroll;">
-            <canvas id="grafik3"></canvas>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-    <section class="col-lg-12">
-
-      <div class="card card-grafik">
+       <div class="card card-grafik">
         <div class="card-header pt-4">
           <h5 class="card-title">Grafik Keuangan <b>Per Kategori</b> Bulan Ini</h5>
         </div>
         <div class="card-body">
 
-         <canvas id="grafik4"></canvas>
+          <canvas id="grafik4"></canvas>
 
        </div>
      </div>
 
    </section>
 
+   
+   <section class="col-lg-6">
+     
+     <div class="card card-grafik">
+       <div class="card-header pt-4">
+         <h5 class="card-title">Grafik Keuangan <b>Per Hari</b> Di Bulan Ini</h5>
+        </div>
+        <div class="card-body">
+
+          <div style="overflow-x: scroll;">
+            <canvas id="grafik3"></canvas>
+          </div>
+          
+        </div>
+      </div>
+      
+    </section>
+    
+    <section class="col-lg-12">
+ 
+     <div class="card card-grafik">
+       <div class="card-header pt-4">
+         <h5 class="card-title">Grafik Profit <b>Per Hari</b> Di Bulan Ini</h5>
+       </div>
+       <div class="card-body">
+
+          <div style="overflow-x: scroll;">
+            <canvas id="grafik5"></canvas>
+          </div>
+        
+       </div>
+     </div>
+ 
+   </section>
 
 
  </div>
