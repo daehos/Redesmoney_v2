@@ -141,9 +141,9 @@
           <div class="col-lg-4 col-sm-12">
           <div class="card" style="background-color: #ffd166">
               <div class="card-body">
-                <h3 class="card-title text-black">Saldo Tahun Ini</h3>
+                <h3 class="card-title text-white">Saldo Tahun Ini</h3>
                 <div class="d-inline-block">
-                  <h3 class="text-black">{{ "Rp. ".number_format($pemasukan_tahun_ini->total - $pengeluaran_tahun_ini->total)." ,-" }}</h3>
+                  <h3 class="text-white">{{ "Rp. ".number_format($pemasukan_tahun_ini->total - $pengeluaran_tahun_ini->total)." ,-" }}</h3>
                   <p class="text-white mb-0">Saldo</p>
                 </div>
               </div>
@@ -195,40 +195,41 @@
         }
       }else{
         ?>
-        <div class="col-lg-4 col-sm-12">
-          <div class="card gradient-7">
-            <div class="card-body">
-              <h3 class="card-title text-white">Pemasukan Hari Ini</h3>
-              <div class="d-inline-block">
-                <h3 class="text-white">{{ "Rp. ".number_format($pemasukan_hari_ini->total)." ,-" }}</h3>
-                <p class="text-white mb-0">{{ date('d-m-Y') }}</p>
+                 <div class="col-lg-4 col-sm-12">
+            <div class="card" style="background-color: #5f7847">
+              <div class="card-body">
+                <h3 class="card-title text-white">Pemasukan Hari Ini</h3>
+                <div class="d-inline-block">
+                  <h3 class="text-white">{{ "Rp. ".number_format($pemasukan_hari_ini->total)." ,-" }}</h3>
+                  <p class="text-white mb-0">{{ date('d-m-Y') }}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-4 col-sm-12">
-          <div class="card gradient-8">
-            <div class="card-body">
-              <h3 class="card-title text-white">Saldo Hari Ini</h3>
-              <div class="d-inline-block">
-                <h3 class="text-white">{{ "Rp. ".number_format($pemasukan_hari_ini->total - $pengeluaran_hari_ini->total)." ,-" }}</h3>
-                <p class="text-white mb-0">Saldo</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="col-lg-4 col-sm-12">
-          <div class="card gradient-1">
-            <div class="card-body">
-              <h3 class="card-title text-white">Pengeluaran Hari Ini</h3>
-              <div class="d-inline-block">
-                <h3 class="text-white">{{ "Rp. ".number_format($pengeluaran_hari_ini->total)." ,-" }}</h3>
-                <p class="text-white mb-0">{{ date('d-m-Y') }}</p>
+          <div class="col-lg-4 col-sm-12">
+          <div class="card" style="background-color: #b34127">
+              <div class="card-body">
+                <h3 class="card-title text-white">Pengeluaran Hari Ini</h3>
+                <div class="d-inline-block">
+                  <h3 class="text-white">{{ "Rp. ".number_format($pengeluaran_hari_ini->total)." ,-" }}</h3>
+                  <p class="text-white mb-0">{{ date('d-m-Y') }}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+
+          <div class="col-lg-4 col-sm-12">
+          <div class="card" style="background-color: #3c979a">
+              <div class="card-body">
+                <h3 class="card-title text-white">Saldo Hari Ini</h3>
+                <div class="d-inline-block">
+                  <h3 class="text-white">{{ "Rp. ".number_format($pemasukan_hari_ini->total - $pengeluaran_hari_ini->total)." ,-" }}</h3>
+                  <p class="text-white mb-0">Saldo</p>
+                </div>
+              </div>
+            </div>
+          </div>
         <?php 
       }
       ?>
