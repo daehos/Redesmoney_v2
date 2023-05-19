@@ -77,6 +77,11 @@
                   <textarea class="form-control" name="keterangan" autocomplete="off" placeholder="Masukkan keterangan (Opsional) .."></textarea>
                 </div>
 
+                <div class="form-group">
+                  <label>Berkas</label>
+                  <input type="file" class="form-control" name="berkas">
+                </div>
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal"><i class="ti-close m-r-5 f-s-12"></i> Tutup</button>
@@ -100,6 +105,7 @@
               <th rowspan="2" class="text-center">KETERANGAN</th>
               <th colspan="2" class="text-center">JENIS</th>
               @if(Auth::user()->level != "pengawas")
+              <!-- <th rowspan="2" class="text-center">KATEGORI</th> -->
               <th rowspan="2" class="text-center" width="10%">OPSI</th>
               @endif
             </tr>
