@@ -185,19 +185,38 @@ class HomeController extends Controller
 
     public function transaksi_aksi(Request $req)
     {
-        $tanggal = $req->input('tanggal');
-        $jenis = $req->input('jenis');
-        $kategori = $req->input('kategori');
-        $nominal = $req->input('nominal');
-        $keterangan = $req->input('keterangan');
+        // $tanggal = $req->input('tanggal');
+        // $jenis = $req->input('jenis');
+        // $kategori = $req->input('kategori');
+        // $nominal = $req->input('nominal');
+        // $keterangan = $req->input('keterangan');
 
-        Transaksi::create([
-            'tanggal' => $tanggal,
-            'jenis' => $jenis,
-            'kategori_id' => $kategori,
-            'nominal' => $nominal,
-            'keterangan' => $keterangan,
+        // Transaksi::create([
+        //     'tanggal' => $tanggal,
+        //     'jenis' => $jenis,
+        //     'kategori_id' => $kategori,
+        //     'nominal' => $nominal,
+        //     'keterangan' => $keterangan,
+        // ]);
+// dd($req);
+        // dd($req);
+        $validated = $req->validate([
+            'tanggal' => 'required|date',
+            'jenis' => 'required|in:Pemasukan,Pengeluaran',
+            'kategori_id' => 'required',
+            'nominal' => 'required|numeric',
+            'keterangan' => 'nullable',
+            'bukti_transaksi' => 'file|mimes:jpeg,png,jpg,pdf'
         ]);
+
+
+
+        if($req->file('bukti_transaksi')) {
+            $validated['bukti_transaksi'] = $req->file('bukti_transaksi')->store('bukti-transaksi');
+        }
+
+
+        Transaksi::create($validated);
 
         return redirect()->back()->with("success","Transaksi telah disimpan!");
     }

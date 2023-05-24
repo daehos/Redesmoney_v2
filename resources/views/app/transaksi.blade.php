@@ -29,7 +29,7 @@
     <div class="card-body pt-0">
 
       <!-- Modal -->
-      <form action="{{ route('transaksi.aksi') }}" method="post">
+      <form action="{{ route('transaksi.aksi') }}" method="POST" enctype="multipart/form-data"">
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -59,7 +59,7 @@
 
                 <div class="form-group">
                   <label>Kategori</label>
-                  <select class="form-control" required="required" name="kategori">
+                  <select class="form-control" required="required" name="kategori_id">
                     <option value="">Pilih</option>
                     @foreach($kategori as $k)
                     <option value="{{ $k->id }}">{{ $k->kategori }}</option>
@@ -75,6 +75,11 @@
                 <div class="form-group">
                   <label>Keterangan</label>
                   <textarea class="form-control" name="keterangan" autocomplete="off" placeholder="Masukkan keterangan (Opsional) .."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label>Bukti Transkasi</label>
+                  <input type="file" class="form-control" name="bukti_transaksi" autocomplete="off" placeholder="Bukti transaksi"></input>
                 </div>
 
               </div>
@@ -102,6 +107,7 @@
               @if(Auth::user()->level != "pengawas")
               <th rowspan="2" class="text-center" width="10%">OPSI</th>
               @endif
+              <th rowspan="3" class="text-center" width="10%">Preview</th>
             </tr>
             <tr>
               <th class="text-center">PEMASUKAN</th>
@@ -242,6 +248,9 @@
                 </form>
               </td>
               @endif
+              <td class="text-center">
+                <a href="/download" >lihat bukti</a>
+              </td>
             </tr>
 
 

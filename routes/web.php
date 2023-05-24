@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +40,8 @@ Route::post('/password/update', 'HomeController@password_update')->name('passwor
 
 Route::get('/transaksi', 'HomeController@transaksi')->name('transaksi');
 Route::post('/transaksi/aksi', 'HomeController@transaksi_aksi')->name('transaksi.aksi');
+// Route::post('/transaksi/action', [HomeController::class, 'transaksi_aksi']);
+
 Route::put('/transaksi/update/{id}', 'HomeController@transaksi_update')->name('transaksi.update');
 Route::delete('/transaksi/delete/{id}', 'HomeController@transaksi_delete')->name('transaksi.delete');
 
@@ -52,3 +57,12 @@ Route::get('/laporan', 'HomeController@laporan')->name('laporan');
 Route::get('/laporan/pdf', 'HomeController@laporan_pdf')->name('laporan_pdf');
 // Route::get('/laporan/excel', 'HomeController@laporan_excel')->name('laporan_excel');
 Route::get('/laporan/print', 'HomeController@laporan_print')->name('laporan_print');
+
+Route::get('/download',function(){
+    $path = storage_path()."\app\public\bukti-transaksi\\5MJv0xTEprXsGDsL5HoeDm3626OIi6cp1jiOBtjf.png";
+    return response()->download($path);
+});
+
+Route::get("/preview", function(){
+    return response()->file(storage_path("app\public\bukti-transaksi\\WulmoUDqnCApDJxIZFUEorTEvCgV6UL7zlDpfwRM.pdf"));
+});

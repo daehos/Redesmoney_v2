@@ -17,9 +17,10 @@ class CreateTransaksisTable extends Migration
             $table->id();
             $table->date('tanggal');
             $table->enum('jenis',['Pemasukan','Pengeluaran']);
-            $table->integer('kategori_id');
+            $table->foreignId('kategori_id');
             $table->integer('nominal');
             $table->text('keterangan')->nullable();
+            $table->string('bukti_transaksi')->nullable();
             $table->timestamps();
         });
     }
