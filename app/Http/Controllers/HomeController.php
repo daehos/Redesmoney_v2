@@ -426,4 +426,12 @@ class HomeController extends Controller
 
         return redirect(route('user'))->with("success","User telah dihapus!");
     }
+
+    public function bukti(string $id)
+    {
+        $transaksi = Transaksi::find($id);
+
+        // return response()->file(public_path($transaksi->bukti_transaksi));
+        return response()->file(storage_path("app\public/" . $transaksi->bukti_transaksi));
+    }
 }

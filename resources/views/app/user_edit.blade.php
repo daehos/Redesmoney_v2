@@ -66,7 +66,7 @@
                   <label class="text-dark">Level</label>
                   <select class="form-control @error('level') is-invalid @enderror" name="level">
                     <option <?php if(old("level", $user->level) == "admin"){echo "selected='selected'";} ?> value="admin">Admin</option>
-                    <option <?php if(old("level", $user->level) == "bendahara"){echo "selected='selected'";} ?> value="bendahara">Bendahara</option>
+                    <option <?php if(old("level", $user->level) == "pengawas"){echo "selected='selected'";} ?> value="pengawas">Pengawas</option>
                   </select>
                   
                   @error('level')

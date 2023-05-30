@@ -114,7 +114,7 @@
                @endif
                 <div class="media-body">
                     <h5 class="mb-0">{{ Auth::user()->name }}</h5>
-                    <p class="text-muted mb-0"><?php if(Auth::user()->level == "admin"){ echo "Administrator";}else if(Auth::user()->level == "bendahara"){ echo "Bendahara"; }else{ echo "Pengawas"; } ?></p>
+                    <p class="text-muted mb-0"><?php if(Auth::user()->level == "admin"){ echo "Administrator";}else if(Auth::user()->level == "pengawas"){ echo "Pengawas"; }else{ echo "Pengawas"; } ?></p>
                 </div>
             </div>
         </div>

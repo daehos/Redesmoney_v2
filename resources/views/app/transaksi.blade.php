@@ -249,7 +249,7 @@
               </td>
               @endif
               <td class="text-center">
-                <a href="/download" >lihat bukti</a>
+                <a target="_blank" href="./transaksi/bukti/{{$t->id}}" >lihat bukti</a>
               </td>
             </tr>
 
