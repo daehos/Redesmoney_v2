@@ -66,5 +66,5 @@ Route::get('/download',function(){
 Route::get("/transaksi/bukti/{id}", 'HomeController@bukti')->name('transaksi.bukti');
 
 Route::get("/preview", function(){
-    return response()->file(storage_path("app\public\bukti-transaksi\\WulmoUDqnCApDJxIZFUEorTEvCgV6UL7zlDpfwRM.pdf"));
+    return response()->file(storage_path("app\public\bukti-transaksi\\Ah9cmC5KKvXN6aDAVz6mNyH1mH6lyKOPBgeSP4bg.jpg"));
 });

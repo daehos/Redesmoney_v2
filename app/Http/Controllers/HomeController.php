@@ -432,6 +432,6 @@ class HomeController extends Controller
         $transaksi = Transaksi::find($id);
 
         // return response()->file(public_path($transaksi->bukti_transaksi));
-        return response()->file(storage_path("app\public/" . $transaksi->bukti_transaksi));
+        return response()->file(storage_path("app/" . $transaksi->bukti_transaksi));
     }
 }
